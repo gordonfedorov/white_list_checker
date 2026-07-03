@@ -1,0 +1,19 @@
+[SETTINGS]
+max_workers = 10     # Number of concurrent threads
+batch_size = 500     # Bulk verification block size before DB commit
+timeout = 3           # Request timeout in seconds
+simulate_whitelist = False # Force Whitelist Mode for debugging (True or False)
+
+[SITES]
+github.com/websitelaunches/top-100-million-domains/releases/download/v1.0/top-1k-domains.csv
+github.com/websitelaunches/top-100-million-domains/releases/download/v1.0/top-10k-domains.csv
+github.com/websitelaunches/top-100-million-domains/releases/download/v1.0/top-100k-domains.csv
+github.com/websitelaunches/top-100-million-domains/releases/download/v1.0/top-1m-domains.csv | +\.ru$, +\.su$, +\.ch$
+github.com/websitelaunches/top-100-million-domains/releases/download/v1.0/top-10m-domains.csv | \.ru$|\.ch$
+#github.com/websitelaunches/top-100-million-domains/releases/download/v1.0/top-100m-domains.csv | \.ru$|\.ch$
+
+# Домены .ru и .su берем, но при этом полностью игнорируем любые поддомены gosdep или api
+#https://githubusercontent.com | +\.ru$, +\.su$, -^gosdep\., -^api\.
+
+# Берем всё, кроме доменов зоны .com и доменов со словом test
+#https://example.com | -\.com$, -test
