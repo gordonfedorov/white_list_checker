@@ -1,2 +1,2 @@
 # white_list_checker
-Test available sites in russian white lists
+Проверка доступности сайтов в белом списке мобильных операторов России. Код сгенерирован Google Gemini.
